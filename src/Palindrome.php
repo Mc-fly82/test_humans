@@ -43,14 +43,18 @@ class Palindrome
 	 * @param array $num
 	 *
 	 * find the median digit position in int
+	 * if not found return -1
+	 *
 	 */
 	function getNumberMedianDigitIndex(int $num)
 	{
+		$num_length = $this->getStrlen($num);
+
 		if ( ! $this->numLenghtIsEven($num)) {
-			//	dd($indexOfMedianDigit);
-		} else {
-			// TODO: Marc Flavius - split into 2 array
+			return floor($num_length / 2);
 		}
+
+		return -1;
 
 	}
 
