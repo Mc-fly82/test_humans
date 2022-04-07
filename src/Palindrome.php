@@ -5,6 +5,7 @@ namespace App;
 use Exception;
 use function array_reverse;
 use function count;
+use function join;
 
 /**
  * Class Palindrome
@@ -31,10 +32,15 @@ class Palindrome
 	{
 		$arrayOfNum = $this->stringToArray($num);
 		if ($this->numLenghtIsEven($num)) {
-			$obj = $this->splitEvenArrayInHalf($arrayOfNum);
+			$evenSplit = $this->splitEvenArrayInHalf($arrayOfNum);
 
-			return ($obj->firstHalf == array_reverse($obj->secondHalf));
+			return ($evenSplit->firstHalf == array_reverse($evenSplit->secondHalf));
 		}
+
+		$oddSplit = $this->splitOddArrayInHalf($arrayOfNum);
+
+		return ($oddSplit->firstHalf == array_reverse($oddSplit->secondHalf));
+
 	}
 
 	/**
@@ -63,7 +69,7 @@ class Palindrome
 		$num_length = $this->getStrlen($num);
 
 		if ( ! $this->numLenghtIsEven($num)) {
-			return floor($num_length / 2);
+			return (int) floor($num_length / 2);
 		}
 
 		return -1;
