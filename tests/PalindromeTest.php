@@ -97,4 +97,15 @@ class PalindromeTest extends TestCase
 		$this->assertTrue($this->polindrome->isPalUtil(22622));
 	}
 
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 * @throws Exception
+	 */
+	public function isPal_throw_exception_on_negative_number()
+	{
+		$this->expectException(Exception::class);
+		$this->polindrome->isPal(-1);
+	}
+
 }
