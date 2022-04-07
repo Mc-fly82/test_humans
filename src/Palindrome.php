@@ -4,6 +4,7 @@ namespace App;
 
 use Exception;
 use function array_reverse;
+use function count;
 
 /**
  * Class Palindrome
@@ -106,9 +107,16 @@ class Palindrome
 	}
 
 	/**
+	 * split a even length array in haft
+	 *
+	 * @throws Exception
 	 */
 	private function splitEvenArrayInHalf(array $arrayOfNum): object
 	{
+		if ( ! $this->numLenghtIsEven(count($arrayOfNum))) {
+			throw new Exception("Array is odd, please pass a even length array");
+		}
+
 		$firstHalf  = array_slice($arrayOfNum, 0, count($arrayOfNum) / 2);
 		$secondHalf = array_slice($arrayOfNum, count($arrayOfNum) / 2);
 
