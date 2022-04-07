@@ -3,6 +3,7 @@
 namespace App;
 
 use Exception;
+use function count;
 
 /**
  * Class Palindrome
@@ -21,7 +22,8 @@ class Palindrome
 
 	function isPalUtil(int $num)
 	{
-		$arrayOfNum = array_map('intval', str_split($num));
+
+
 	}
 
 	/**
@@ -40,11 +42,27 @@ class Palindrome
 
 	/**
 	 * @param array $num
+	 *
+	 * find the median digit position in int
 	 */
-	function getMedian(array $num)
+	function getNumberMedianDigitPosition(int $num)
 	{
 
+		if ( ! $this->isEven($num)) {
+			$arrayOfNum         = array_map('intval', str_split($num));
+			$indexOfMedianDigit = floor(count($arrayOfNum) / 2);
+			//	dd($indexOfMedianDigit);
+		} else {
+			// TODO: Marc Flavius - split into 2 array
+		}
 
+	}
+
+	public function numLenghtIsEven(int $num)
+	{
+		$num_length = strlen((string) $num);
+
+		return ($num_length % 2) === 0;
 	}
 
 	/**
