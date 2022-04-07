@@ -5,28 +5,32 @@ use PHPUnit\Framework\TestCase;
 
 class AnagramTest extends TestCase
 {
-	protected Anagram $anagram;
 
 	/**
-	 * @test
-	 * @group AnagramTest
+	 * @var string[]
 	 */
-	public function findInDb()
-	{
-
-	}
+	protected array $db1;
 
 	protected function setUp(): void
 	{
-		$db = [
+		parent::setUp();
+		$this->db1 = [
 			'ddbb',
 			'dbce',
 			'bbdd',
 			'vdvd',
 		];
 
-		parent::setUp();
-		$this->anagram = new Anagram($db);
+	}
+
+	/**
+	 * @test
+	 * @group AnagramTest
+	 */
+	public function findInDb_returns_true_if_presented_whit_a_anagram_match()
+	{
+		//stub out db
+		$this->assertTrue((new Anagram([]))->isAnagram("dbbd", "ddbb"));
 	}
 
 }
