@@ -3,6 +3,7 @@
 namespace App;
 
 use Exception;
+use function array_reverse;
 
 /**
  * Class Palindrome
@@ -21,8 +22,12 @@ class Palindrome
 
 	function isPalUtil(int $num)
 	{
+		$arrayOfNum = $this->stringToArray($num);
+		if ($this->numLenghtIsEven($num)) {
+			$obj = $this->splitEvenArrayInHalf($arrayOfNum);
 
-
+			return ($obj->firstHalf == array_reverse($obj->secondHalf));
+		}
 	}
 
 	/**
