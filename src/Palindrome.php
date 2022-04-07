@@ -58,7 +58,12 @@ class Palindrome
 
 	}
 
-	public function numLenghtIsEven(int $num)
+	/**
+	 * @param int $num
+	 *
+	 * @return bool
+	 */
+	public function numLenghtIsEven(int $num): bool
 	{
 		$num_length = strlen((string) $num);
 
