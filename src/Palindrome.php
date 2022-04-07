@@ -23,6 +23,12 @@ use function join;
  */
 class Palindrome
 {
+	protected Utils $utils;
+
+	public function __construct()
+	{
+		$this->utils = new Utils();
+	}
 
 	/**
 	 * @param int $num
@@ -32,7 +38,7 @@ class Palindrome
 	 */
 	function isPalUtil(int $num): bool
 	{
-		$arrayOfNum = Utils::numToArray($num);
+		$arrayOfNum = $this->utils::numToArray($num);
 		if ($this->numLengthIsEven($num)) {
 			$evenSplit = $this->splitEvenArrayInHalf($arrayOfNum);
 
@@ -93,16 +99,6 @@ class Palindrome
 	}
 
 	/**
-	 * @param $num
-	 *
-	 * @return bool
-	 */
-	function isIntEven($num): bool
-	{
-		return ($num % 2) === 0;
-	}
-
-	/**
 	 * @param int $num
 	 *
 	 * @return int
@@ -119,7 +115,7 @@ class Palindrome
 	 */
 	private function splitEvenArrayInHalf(array $arrayOfNum): object
 	{
-		if ( ! $this->isIntEven(count($arrayOfNum))) {
+		if ( ! $this->utils->isIntEven(count($arrayOfNum))) {
 			throw new Exception("Array is odd, please pass a even length array");
 		}
 
@@ -137,7 +133,7 @@ class Palindrome
 	 */
 	private function splitOddArrayInHalf(array $arrayOfNum): object
 	{
-		if ($this->isIntEven(count($arrayOfNum))) {
+		if ($this->utils->isIntEven(count($arrayOfNum))) {
 			throw new Exception("Array is even, please pass a odd length array");
 		}
 

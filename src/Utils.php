@@ -14,4 +14,14 @@ class Utils
 	{
 		return array_map('intval', str_split($num));
 	}
+
+	/**
+	 * @param $num
+	 *
+	 * @return bool
+	 */
+	public function isIntEven($num): bool
+	{
+		return ($num % 2) === 0;
+	}
 }
