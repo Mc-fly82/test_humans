@@ -76,7 +76,7 @@ class Palindrome
 	 */
 	function getNumberMedianDigitIndex(int $num): int
 	{
-		$num_length = $this->getStrlen($num);
+		$num_length = $this->utils->getIntLength($num);
 
 		if ( ! $this->numLengthIsEven($num)) {
 			return (int) floor($num_length / 2);
@@ -93,19 +93,9 @@ class Palindrome
 	 */
 	public function numLengthIsEven(int $num): bool
 	{
-		$num_length = $this->getStrlen($num);
+		$num_length = $this->utils->getIntLength($num);
 
 		return ($num_length % 2) === 0;
-	}
-
-	/**
-	 * @param int $num
-	 *
-	 * @return int
-	 */
-	private function getStrlen(int $num): int
-	{
-		return strlen((string) $num);
 	}
 
 	/**

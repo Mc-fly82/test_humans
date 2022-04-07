@@ -24,4 +24,14 @@ class Utils
 	{
 		return ($num % 2) === 0;
 	}
+
+	/**
+	 * @param int $num
+	 *
+	 * @return int
+	 */
+	public function getIntLength(int $num): int
+	{
+		return strlen((string) $num);
+	}
 }
