@@ -37,4 +37,13 @@ class PalindromeTest extends TestCase
 		$this->assertEquals(false, $this->polindrome->isEven(21));
 	}
 
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 */
+	public function numLenghtIsEven_return_false_when_passed_100()
+	{
+		$this->assertEquals(false, $this->polindrome->numLenghtIsEven(100));
+	}
+
 }
