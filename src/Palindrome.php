@@ -32,7 +32,7 @@ class Palindrome
 	function isPalUtil(int $num): bool
 	{
 		$arrayOfNum = $this->stringToArray($num);
-		if ($this->numLenghtIsEven($num)) {
+		if ($this->numLengthIsEven($num)) {
 			$evenSplit = $this->splitEvenArrayInHalf($arrayOfNum);
 
 			return ($evenSplit->firstHalf == array_reverse($evenSplit->secondHalf));
@@ -71,7 +71,7 @@ class Palindrome
 	{
 		$num_length = $this->getStrlen($num);
 
-		if ( ! $this->numLenghtIsEven($num)) {
+		if ( ! $this->numLengthIsEven($num)) {
 			return (int) floor($num_length / 2);
 		}
 
@@ -84,7 +84,7 @@ class Palindrome
 	 *
 	 * @return bool
 	 */
-	public function numLenghtIsEven(int $num): bool
+	public function numLengthIsEven(int $num): bool
 	{
 		$num_length = $this->getStrlen($num);
 
