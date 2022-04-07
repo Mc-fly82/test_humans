@@ -20,8 +20,8 @@ class PopDashTest extends TestCase
 	 * @test
 	 * @group PopDashTest
 	 */
-	public function test()
+	public function parse_returns_good_sequence_when_passed_4615()
 	{
-		$this->assertEquals("434", $this->popdash->parse(434));
+		$this->assertEquals("46-1-5", $this->popdash->parse(4615));
 	}
 }
