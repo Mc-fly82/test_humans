@@ -4,6 +4,7 @@ namespace App;
 
 use function abs;
 use function count;
+use function is_int;
 use function trim;
 
 /**
@@ -30,12 +31,16 @@ class PopDash
 	}
 
 	/**
-	 * @param int $value
+	 *
+	 * @param $value
 	 *
 	 * @return string
 	 */
-	public function parse(int $value): string
+	public function parse($value): string
 	{
+		if ( ! is_int($value)) {
+			return "";
+		}
 		//sanitize
 		$value = abs($value);
 

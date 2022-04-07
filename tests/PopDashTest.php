@@ -54,4 +54,13 @@ class PopDashTest extends TestCase
 		$this->assertEquals("1-7-48", $this->popdash->parse(1748));
 
 	}
+
+	/**
+	 * @test
+	 * @group PopDashTest
+	 */
+	public function parse_returns_empty_string_on_non_int()
+	{
+		$this->assertEquals("", $this->popdash->parse("1748"));
+	}
 }
