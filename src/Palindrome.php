@@ -138,4 +138,26 @@ class Palindrome
 		];
 	}
 
+	/**
+	 * @throws Exception
+	 */
+	private function splitOddArrayInHalf(array $arrayOfNum)
+	{
+		if ($this->isIntEven(count($arrayOfNum))) {
+			throw new Exception("Array is even, please pass a odd length array");
+		}
+
+		$index = $this->getNumberMedianDigitIndex((int) join("", $arrayOfNum));
+
+		unset($arrayOfNum[ $index ]);
+
+		$firstHalf  = array_slice($arrayOfNum, 0, count($arrayOfNum) / 2);
+		$secondHalf = array_slice($arrayOfNum, count($arrayOfNum) / 2);
+
+		return (object) [
+			"firstHalf"  => $firstHalf,
+			"secondHalf" => $secondHalf,
+		];
+	}
+
 }
