@@ -2,6 +2,8 @@
 
 namespace App;
 
+use function array_push;
+
 /**
  * Class Anagram
  *
@@ -18,9 +20,37 @@ class Anagram
 
 	private $db;
 
-	public function __construct($db)
+	public function __construct(array $db)
 	{
 
 		$this->db = $db;
+	}
+
+	/**
+	 * @param string $string
+	 *
+	 * @return array
+	 */
+	public function findInDb(string $string): array
+	{
+		$output_array = [];
+
+		foreach ($this->db as $item) {
+			if ($this->isAnagram($item)) {
+				array_push($output_array, $item);
+			}
+		}
+
+		return [];
+	}
+
+	/**
+	 * @param $item
+	 *
+	 * @return bool
+	 */
+	private function isAnagram($item): bool
+	{
+		return true;
 	}
 }
