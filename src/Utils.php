@@ -19,7 +19,7 @@ class Utils
 	 *
 	 * @return array
 	 */
-	public static function numToArray(int $num): array
+	public function numToArray(int $num): array
 	{
 		return array_map('intval', str_split($num));
 	}

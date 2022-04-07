@@ -36,7 +36,7 @@ class Palindrome
 	 */
 	function isPalUtil(int $num): bool
 	{
-		$arrayOfNum = $this->utils::numToArray($num);
+		$arrayOfNum = $this->utils->numToArray($num);
 		if ($this->numLengthIsEven($num)) {
 			$evenSplit = $this->splitEvenArrayInHalf($arrayOfNum);
 
