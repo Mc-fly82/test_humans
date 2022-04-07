@@ -81,6 +81,7 @@ class PalindromeTest extends TestCase
 	public function isPalUtil_check_if_a_even_length_number_is_a_palindrome()
 	{
 		$this->assertTrue($this->polindrome->isPalUtil(1001));
+		$this->assertTrue($this->polindrome->isPalUtil(1221));
 
 	}
 }
