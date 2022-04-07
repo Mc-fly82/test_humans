@@ -4,6 +4,13 @@ namespace App;
 
 use Exception;
 
+/**
+ * Class Utils
+ *
+ * Add the test utils
+ *
+ * @package App
+ */
 class Utils
 {
 
