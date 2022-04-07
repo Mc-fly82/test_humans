@@ -5,6 +5,7 @@ namespace App;
 use Exception;
 use function array_reverse;
 use function count;
+use function is_null;
 use function is_numeric;
 use function join;
 
@@ -185,16 +186,49 @@ class Palindrome
 	 *
 	 * @return int
 	 * @throws Exception
+	 * trouve le plus proche Palindrome avec une préférence pour le Palindrome supérieur à la valeur de départ si les deux deltas (sup et inf) sont égaux
+	 *
 	 */
-	public function findNextPalindrome(int $num): int
+	public function findNearestPalindrome(int $num): int
 	{
-			$num++;
+		$findUpperBound = null;
+		$findLowerBound = null;
+		$upCount        = $num;
+		$downCount      = $num;
 
-			while ( ! $this->isPalUtil($num)) {
-				$num++;
+		while (is_null($findLowerBound) || is_null($findUpperBound)) {
+
+			// handle up tick
+			if (is_null($findUpperBound)) {
+				$upCount++;
 			}
 
-		return $num;
+			// handle down tick
+			if (is_null($findLowerBound) && ! $downCount <= 0) {
+				$downCount--;
+			}
+
+			//handle set upper bound
+			if ($this->isPalUtil($upCount)) {
+				$findUpperBound = $upCount;
+			}
+
+			//handle set lower bound
+			if ($this->isPalUtil($downCount)) {
+				$findLowerBound = $downCount;
+			}
+		}
+
+		//after loop
+		$lowDelta  = $num - $findLowerBound;
+		$highDelta = $findUpperBound - $num;
+
+		// determine the lowest delta
+		if ($highDelta > $lowDelta) {
+			return $findLowerBound;
+		}
+
+		return $findUpperBound;
 	}
 
 }

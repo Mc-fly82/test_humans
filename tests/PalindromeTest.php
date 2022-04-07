@@ -5,6 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class PalindromeTest
+ * sequence: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101, 111
  */
 class PalindromeTest extends TestCase
 {
@@ -20,7 +21,6 @@ class PalindromeTest extends TestCase
 	 * @test
 	 * @group PalindromeTest
 	 *
-	 * sequence: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44, 55, 66, 77, 88, 99, 101, 111
 	 */
 	public function is_even_return_true_when_passed_22()
 	{
@@ -136,8 +136,8 @@ class PalindromeTest extends TestCase
 	 */
 	public function findNextPalindrome_test()
 	{
-		$this->assertEquals(11, $this->polindrome->findNextPalindrome(10));
-		$this->assertEquals(101, $this->polindrome->findNextPalindrome(100));
+		$this->assertEquals(9, $this->polindrome->findNearestPalindrome(8));
+		$this->assertEquals(1001, $this->polindrome->findNearestPalindrome(1029));
 	}
 
 }
