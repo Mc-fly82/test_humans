@@ -84,4 +84,15 @@ class PalindromeTest extends TestCase
 		$this->assertTrue($this->polindrome->isPalUtil(1221));
 
 	}
+
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 * @throws Exception
+	 */
+	public function isPalUtil_check_if_a_odd_length_number_is_a_palindrome()
+	{
+		$this->assertTrue($this->polindrome->isPalUtil(111));
+	}
+
 }
