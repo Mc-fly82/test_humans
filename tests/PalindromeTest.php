@@ -24,7 +24,7 @@ class PalindromeTest extends TestCase
 	 */
 	public function is_even_return_true_when_passed_22()
 	{
-		$this->assertEquals(true, $this->polindrome->isIntEven(22));
+		$this->assertEquals(true, $this->polindrome->utils->isIntEven(22));
 	}
 
 	/**
@@ -34,7 +34,7 @@ class PalindromeTest extends TestCase
 	public function is_even_return_false_when_passed_21()
 	{
 
-		$this->assertEquals(false, $this->polindrome->isIntEven(21));
+		$this->assertEquals(false, $this->polindrome->utils->isIntEven(21));
 	}
 
 	/**

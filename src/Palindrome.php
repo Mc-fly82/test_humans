@@ -21,7 +21,7 @@ use function is_null;
  */
 class Palindrome
 {
-	protected Utils $utils;
+	public Utils $utils;
 
 	public function __construct()
 	{
