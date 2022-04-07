@@ -6,8 +6,6 @@ use Exception;
 use function array_reverse;
 use function count;
 use function is_null;
-use function is_numeric;
-use function join;
 
 /**
  * Class Palindrome
@@ -127,7 +125,7 @@ class Palindrome
 			throw new Exception("Array is even, please pass a odd length array");
 		}
 
-		$index = $this->getNumberMedianDigitIndex($this->ArrayToNum($arrayOfNum));
+		$index = $this->getNumberMedianDigitIndex($this->utils->arrayToNum($arrayOfNum));
 
 		unset($arrayOfNum[ $index ]);
 
@@ -138,23 +136,6 @@ class Palindrome
 			"firstHalf"  => $firstHalf,
 			"secondHalf" => $secondHalf,
 		];
-	}
-
-	/**
-	 * @param array $arrayOfNum
-	 *
-	 * @return int
-	 * @throws Exception
-	 */
-	private function ArrayToNum(array $arrayOfNum): int
-	{
-		foreach ($arrayOfNum as $item) {
-			if ( ! is_numeric($item)) {
-				throw new Exception("can't convert array to number, all element are not numbers");
-			}
-		}
-
-		return (int) join("", $arrayOfNum);
 	}
 
 	/**
