@@ -32,7 +32,7 @@ class Palindrome
 	 */
 	function isPalUtil(int $num): bool
 	{
-		$arrayOfNum = $this->numToArray($num);
+		$arrayOfNum = Utils::numToArray($num);
 		if ($this->numLengthIsEven($num)) {
 			$evenSplit = $this->splitEvenArrayInHalf($arrayOfNum);
 
@@ -110,16 +110,6 @@ class Palindrome
 	private function getStrlen(int $num): int
 	{
 		return strlen((string) $num);
-	}
-
-	/**
-	 * @param int $num
-	 *
-	 * @return array
-	 */
-	private function numToArray(int $num): array
-	{
-		return array_map('intval', str_split($num));
 	}
 
 	/**
