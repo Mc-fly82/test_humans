@@ -45,9 +45,6 @@ class PopDash
 		//serialize value
 		$array = $this->utils->numToArray($value);
 
-		// get array size
-		$arrayLength = count($array);
-
 		foreach ($array as $key => $currentValue) {
 
 			if ( ! $this->utils->isIntEven($currentValue)) {
