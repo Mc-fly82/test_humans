@@ -129,4 +129,14 @@ class PalindromeTest extends TestCase
 		$this->assertFalse($this->polindrome->isPal(4221));
 	}
 
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 * @throws Exception
+	 */
+	public function findNextPalindrome_test()
+	{
+		$this->assertEquals(22, $this->polindrome->findNextPalindrome(11));
+	}
+
 }
