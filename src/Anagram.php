@@ -19,6 +19,8 @@ use function sort;
 class Anagram
 {
 
+	protected Utils $utils;
+
 	private $db;
 
 	public function __construct(array $db)
@@ -28,7 +30,7 @@ class Anagram
 	}
 
 	/**
-	 * @param string $string
+	 * @param string $value
 	 *
 	 * @return array
 	 */
@@ -46,7 +48,8 @@ class Anagram
 	}
 
 	/**
-	 * @param $item
+	 * @param $value
+	 * @param $db_item
 	 *
 	 * @return bool
 	 */
