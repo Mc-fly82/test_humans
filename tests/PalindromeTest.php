@@ -50,9 +50,9 @@ class PalindromeTest extends TestCase
 	 * @test
 	 * @group PalindromeTest
 	 */
-	public function numLenghtIsEven_return_true_when_passed_10()
+	public function numLengthIsEven_return_true_when_passed_10()
 	{
-		$this->assertEquals(true, $this->polindrome->numLengthIsEven(10));
+		$this->assertTrue($this->polindrome->numLengthIsEven(10));
 
 	}
 
