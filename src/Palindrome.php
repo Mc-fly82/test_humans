@@ -141,7 +141,7 @@ class Palindrome
 	/**
 	 * @throws Exception
 	 */
-	private function splitOddArrayInHalf(array $arrayOfNum)
+	private function splitOddArrayInHalf(array $arrayOfNum): object
 	{
 		if ($this->isIntEven(count($arrayOfNum))) {
 			throw new Exception("Array is even, please pass a odd length array");
