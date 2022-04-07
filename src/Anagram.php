@@ -3,6 +3,7 @@
 namespace App;
 
 use function array_push;
+use function sort;
 
 /**
  * Class Anagram
@@ -22,8 +23,8 @@ class Anagram
 
 	public function __construct(array $db)
 	{
-
-		$this->db = $db;
+		$this->utils = new Utils();
+		$this->db    = $db;
 	}
 
 	/**
@@ -31,13 +32,13 @@ class Anagram
 	 *
 	 * @return array
 	 */
-	public function findInDb(string $string): array
+	public function findInDb(string $value): array
 	{
 		$output_array = [];
 
-		foreach ($this->db as $item) {
-			if ($this->isAnagram($item)) {
-				array_push($output_array, $item);
+		foreach ($this->db as $db_item) {
+			if ($this->isAnagram($value, $db_item)) {
+				array_push($output_array, $db_item);
 			}
 		}
 
@@ -49,8 +50,14 @@ class Anagram
 	 *
 	 * @return bool
 	 */
-	private function isAnagram($item): bool
+	function isAnagram($value, $db_item): bool
 	{
-		return true;
+		$arrayStr     = $this->utils->stringToArray($value);
+		$arrayOfDbStr = $this->utils->stringToArray($db_item);
+
+		$sortedArrayStr     = sort($arrayStr);
+		$sortedArrayOfDbStr = sort($arrayOfDbStr);
+
+		return $sortedArrayOfDbStr === $sortedArrayStr;
 	}
 }
