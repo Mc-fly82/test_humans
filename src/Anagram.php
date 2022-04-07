@@ -52,12 +52,12 @@ class Anagram
 	 */
 	function isAnagram($value, $db_item): bool
 	{
+
 		$arrayStr     = $this->utils->stringToArray($value);
 		$arrayOfDbStr = $this->utils->stringToArray($db_item);
+		sort($arrayStr);
+		sort($arrayOfDbStr);
 
-		$sortedArrayStr     = sort($arrayStr);
-		$sortedArrayOfDbStr = sort($arrayOfDbStr);
-
-		return $sortedArrayOfDbStr === $sortedArrayStr;
+		return $arrayOfDbStr === $arrayStr;
 	}
 }
