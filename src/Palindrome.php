@@ -21,7 +21,13 @@ use function count;
 class Palindrome
 {
 
-	function isPalUtil(int $num)
+	/**
+	 * @param int $num
+	 *
+	 * @return bool
+	 * @throws Exception
+	 */
+	function isPalUtil(int $num): bool
 	{
 		$arrayOfNum = $this->stringToArray($num);
 		if ($this->numLenghtIsEven($num)) {
