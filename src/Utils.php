@@ -25,6 +25,16 @@ class Utils
 	}
 
 	/**
+	 * @param int $value
+	 *
+	 * @return array
+	 */
+	public function stringToArray(string $value): array
+	{
+		return str_split($value);
+	}
+
+	/**
 	 * @param $num
 	 *
 	 * @return bool

@@ -2,6 +2,10 @@
 
 namespace App;
 
+use function abs;
+use function count;
+use function trim;
+
 /**
  * Class Palindrome
  *
@@ -32,16 +36,77 @@ class PopDash
 	 */
 	public function parse(int $value): string
 	{
+		//sanitize
+		$value = abs($value);
 
+		//setup output object
 		$output = "";
 
+		//serialize value
 		$array = $this->utils->numToArray($value);
 
-		foreach ($array as $item) {
-			$output .= $item."-";
+		// get array size
+		$arrayLength = count($array);
 
+		foreach ($array as $key => $currentValue) {
+
+			if ( ! $this->utils->isIntEven($currentValue)) {
+				$output .= $this->printOddNumber($currentValue);
+			} else {
+				$output .= $this->printEvenNumber($currentValue);
+			}
 		}
 
-		return (string) $value;
+		return $this->stripeDuplicate($output);
+	}
+
+	/**
+	 * @param $currentValue
+	 *
+	 * @return mixed
+	 */
+	private function printEvenNumber($currentValue)
+	{
+		return $currentValue;
+	}
+
+	/**
+	 * @param $currentValue
+	 *
+	 * @return string
+	 */
+	private function printOddNumber($currentValue): string
+	{
+		return "-".$currentValue."-";
+	}
+
+	/**
+	 * @param string $value
+	 *
+	 * @return string
+	 */
+	private function stripeDuplicate(string $value): string
+	{
+
+		$array  = $this->utils->stringToArray($value);
+		$old    = "";
+		$output = "";
+
+		foreach ($array as $key => $item) {
+			$isLastLoop          = count($array) - 1 === $key;
+			$isDuplicateSequence = $old !== $item;
+
+			if ($isDuplicateSequence) {
+				$output .= $item;
+			}
+
+			if ($isLastLoop) {
+				$output = trim($output, "-");
+			}
+
+			$old = $item;
+		}
+
+		return $output;
 	}
 }
