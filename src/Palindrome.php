@@ -3,7 +3,6 @@
 namespace App;
 
 use Exception;
-use function count;
 
 /**
  * Class Palindrome
@@ -45,12 +44,9 @@ class Palindrome
 	 *
 	 * find the median digit position in int
 	 */
-	function getNumberMedianDigitPosition(int $num)
+	function getNumberMedianDigitIndex(int $num)
 	{
-
-		if ( ! $this->isEven($num)) {
-			$arrayOfNum         = array_map('intval', str_split($num));
-			$indexOfMedianDigit = floor(count($arrayOfNum) / 2);
+		if ( ! $this->numLenghtIsEven($num)) {
 			//	dd($indexOfMedianDigit);
 		} else {
 			// TODO: Marc Flavius - split into 2 array
