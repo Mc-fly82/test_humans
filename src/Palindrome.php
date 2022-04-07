@@ -188,14 +188,11 @@ class Palindrome
 	 */
 	public function findNextPalindrome(int $num): int
 	{
-		if ($this->isPal($num)) {
 			$num++;
 
 			while ( ! $this->isPalUtil($num)) {
 				$num++;
 			}
-
-		}
 
 		return $num;
 	}
