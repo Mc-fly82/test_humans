@@ -60,13 +60,14 @@ class Palindrome
 	}
 
 	/**
-	 * @param array $num
+	 * @param int $num
 	 *
 	 * find the median digit position in int
 	 * if not found return -1
 	 *
+	 * @return int
 	 */
-	function getNumberMedianDigitIndex(int $num)
+	function getNumberMedianDigitIndex(int $num): int
 	{
 		$num_length = $this->getStrlen($num);
 
