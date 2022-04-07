@@ -24,4 +24,15 @@ class PopDashTest extends TestCase
 	{
 		$this->assertEquals("46-1-5", $this->popdash->parse(4615));
 	}
+
+	/**
+	 * @test
+	 * @group PopDashTest
+	 */
+	public function parse_returns_correct_sequence_when_passed_274()
+	{
+		$this->assertEquals("2-7-4", $this->popdash->parse(274));
+
+	}
+
 }
