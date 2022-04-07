@@ -33,4 +33,14 @@ class AnagramTest extends TestCase
 		$this->assertTrue((new Anagram([]))->isAnagram("dbbd", "ddbb"));
 	}
 
+	/**
+	 * @test
+	 * @group AnagramTest
+	 */
+	public function findInDb_returns_false_if_presented_whit_a_anagram_match()
+	{
+		//stub out db
+		$this->assertFalse((new Anagram([]))->isAnagram("dbbd", "cccc"));
+	}
+
 }
