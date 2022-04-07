@@ -56,4 +56,12 @@ class PalindromeTest extends TestCase
 
 	}
 
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 */
+	public function getNumberMedianDigitIndex_returns_1_when_given_100()
+	{
+		$this->assertEquals(1, $this->polindrome->getNumberMedianDigitIndex(100));
+	}
 }
