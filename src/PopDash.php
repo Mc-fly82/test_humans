@@ -18,14 +18,30 @@ namespace App;
  */
 class PopDash
 {
+	protected Utils $utils;
+
+	public function __construct()
+	{
+		$this->utils = new Utils();
+	}
+
 	/**
-	 * @param string $val
+	 * @param int $value
 	 *
 	 * @return string
 	 */
-	public function parse(int $val): string
+	public function parse(int $value): string
 	{
 
-		return (string) $val;
+		$output = "";
+
+		$array = $this->utils->numToArray($value);
+
+		foreach ($array as $item) {
+			$output .= $item."-";
+
+		}
+
+		return (string) $value;
 	}
 }
