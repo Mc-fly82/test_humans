@@ -64,4 +64,13 @@ class PalindromeTest extends TestCase
 	{
 		$this->assertEquals(1, $this->polindrome->getNumberMedianDigitIndex(100));
 	}
+
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 */
+	public function getNumberMedianDigitIndex_returns_minus_1_when_geven_10()
+	{
+		$this->assertEquals(-1, $this->polindrome->getNumberMedianDigitIndex(10));
+	}
 }
