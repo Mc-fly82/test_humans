@@ -81,7 +81,7 @@ class Palindrome
 	 *
 	 * @return bool
 	 */
-	function isEven($num): bool
+	function isIntEven($num): bool
 	{
 		return ($num % 2) === 0;
 	}
@@ -113,7 +113,7 @@ class Palindrome
 	 */
 	private function splitEvenArrayInHalf(array $arrayOfNum): object
 	{
-		if ( ! $this->isEven(count($arrayOfNum))) {
+		if ( ! $this->isIntEven(count($arrayOfNum))) {
 			throw new Exception("Array is odd, please pass a even length array");
 		}
 
