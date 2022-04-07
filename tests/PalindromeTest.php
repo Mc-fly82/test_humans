@@ -136,8 +136,8 @@ class PalindromeTest extends TestCase
 	 */
 	public function findNextPalindrome_test()
 	{
-		$this->assertEquals(22, $this->polindrome->findNextPalindrome(11));
-		$this->assertEquals(111, $this->polindrome->findNextPalindrome(101));
+		$this->assertEquals(11, $this->polindrome->findNextPalindrome(10));
+		$this->assertEquals(101, $this->polindrome->findNextPalindrome(100));
 	}
 
 }
