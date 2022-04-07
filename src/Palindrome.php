@@ -90,4 +90,27 @@ class Palindrome
 		return strlen((string) $num);
 	}
 
+	/**
+	 * @param int $num
+	 *
+	 * @return array
+	 */
+	private function stringToArray(int $num): array
+	{
+		return array_map('intval', str_split($num));
+	}
+
+	/**
+	 */
+	private function splitEvenArrayInHalf(array $arrayOfNum): object
+	{
+		$firstHalf  = array_slice($arrayOfNum, 0, count($arrayOfNum) / 2);
+		$secondHalf = array_slice($arrayOfNum, count($arrayOfNum) / 2);
+
+		return (object) [
+			"firstHalf"  => $firstHalf,
+			"secondHalf" => $secondHalf,
+		];
+	}
+
 }
