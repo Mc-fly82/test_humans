@@ -77,6 +77,7 @@ class PalindromeTest extends TestCase
 	/**
 	 * @test
 	 * @group PalindromeTest
+	 * @throws Exception
 	 */
 	public function isPalUtil_check_if_a_even_length_number_is_a_palindrome()
 	{
