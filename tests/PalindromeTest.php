@@ -24,7 +24,7 @@ class PalindromeTest extends TestCase
 	 */
 	public function is_even_return_true_when_passed_22()
 	{
-		$this->assertEquals(true, $this->polindrome->isEven(22));
+		$this->assertEquals(true, $this->polindrome->isIntEven(22));
 	}
 
 	/**
@@ -34,7 +34,7 @@ class PalindromeTest extends TestCase
 	public function is_even_return_false_when_passed_21()
 	{
 
-		$this->assertEquals(false, $this->polindrome->isEven(21));
+		$this->assertEquals(false, $this->polindrome->isIntEven(21));
 	}
 
 	/**
@@ -72,5 +72,15 @@ class PalindromeTest extends TestCase
 	public function getNumberMedianDigitIndex_returns_minus_1_when_geven_10()
 	{
 		$this->assertEquals(-1, $this->polindrome->getNumberMedianDigitIndex(10));
+	}
+
+	/**
+	 * @test
+	 * @group PalindromeTest
+	 */
+	public function isPalUtil_check_if_a_even_length_number_is_a_palindrome()
+	{
+		$this->assertTrue($this->polindrome->isPalUtil(1001));
+
 	}
 }
