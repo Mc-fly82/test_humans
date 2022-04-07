@@ -19,4 +19,42 @@ use Exception;
 class Palindrome
 {
 
+	function isPalUtil(int $num)
+	{
+		$arrayOfNum = array_map('intval', str_split($num));
+	}
+
+	/**
+	 * @param $num
+	 *
+	 * @throws Exception
+	 */
+	function isPal($num)
+	{
+		if ($num < 0) {
+			throw new Exception("Non valide");
+		}
+
+		return $this->isPalUtil($num);
+	}
+
+	/**
+	 * @param array $num
+	 */
+	function getMedian(array $num)
+	{
+
+
+	}
+
+	/**
+	 * @param $num
+	 *
+	 * @return bool
+	 */
+	function isEven($num): bool
+	{
+		return ($num % 2) === 0;
+	}
+
 }
