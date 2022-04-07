@@ -180,4 +180,24 @@ class Palindrome
 		return (int) join("", $arrayOfNum);
 	}
 
+	/**
+	 * @param int $num
+	 *
+	 * @return int
+	 * @throws Exception
+	 */
+	public function findNextPalindrome(int $num): int
+	{
+		if ($this->isPal($num)) {
+			$num++;
+
+			while ( ! $this->isPalUtil($num)) {
+				$num++;
+			}
+
+		}
+
+		return $num;
+	}
+
 }
