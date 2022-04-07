@@ -61,7 +61,7 @@ class Palindrome
 	 */
 	public function numLenghtIsEven(int $num): bool
 	{
-		$num_length = strlen((string) $num);
+		$num_length = $this->getStrlen($num);
 
 		return ($num_length % 2) === 0;
 	}
@@ -74,6 +74,16 @@ class Palindrome
 	function isEven($num): bool
 	{
 		return ($num % 2) === 0;
+	}
+
+	/**
+	 * @param int $num
+	 *
+	 * @return int
+	 */
+	private function getStrlen(int $num): int
+	{
+		return strlen((string) $num);
 	}
 
 }
