@@ -47,9 +47,10 @@ class Palindrome
 	/**
 	 * @param $num
 	 *
+	 * @return bool
 	 * @throws Exception
 	 */
-	function isPal($num)
+	function isPal($num): bool
 	{
 		if ($num < 0) {
 			throw new Exception("Non valide");
