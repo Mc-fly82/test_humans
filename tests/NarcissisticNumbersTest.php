@@ -35,4 +35,16 @@ class NarcissisticNumbersTest extends TestCase
 
 		$this->assertTrue($this->narcissistic->isNarcissistic(153));
 	}
+
+	/**
+	 * @test
+	 * @group NarcissisticNumbersTest
+	 */
+	public function isNarcissistic_returns_false_if_num_is_not_narcissistic()
+	{
+		//  1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
+
+		$this->assertFalse($this->narcissistic->isNarcissistic(1938));
+	}
 }
+
