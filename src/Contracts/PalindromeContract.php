@@ -20,14 +20,14 @@ abstract class PalindromeContract
 {
 
 	/**
-	 * @param $num
+	 * @param int $num
 	 *
 	 * @return bool
 	 * @throws Exception
 	 */
-	abstract public function isPal($num): bool;
+	abstract public function isPal(int $num): bool;
 
-	abstract public function isPalUtil($num);
+	abstract public function isPalUtil(int $num);
 
 	public function findNearestPalindrome(int $num): int
 	{
