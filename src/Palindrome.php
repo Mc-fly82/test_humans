@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Contracts\PalindromeContract;
 use Exception;
 use function array_reverse;
 use function count;
@@ -19,7 +20,7 @@ use function is_null;
  *      getPalindrome(1029) => 1001
  *
  */
-class Palindrome
+class Palindrome implements PalindromeContract
 {
 	public Utils $utils;
 
