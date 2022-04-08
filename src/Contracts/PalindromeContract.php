@@ -18,13 +18,6 @@ use Exception;
  */
 interface PalindromeContract
 {
-	/**
-	 * @param int $num
-	 *
-	 * @return bool
-	 * @throws Exception
-	 */
-	function isPalUtil(int $num): bool;
 
 	/**
 	 * @param $num
