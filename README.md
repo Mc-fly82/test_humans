@@ -1,10 +1,7 @@
 # Test php Humans - Code Kata
-
 ___
-
 ## Ce test se compose de quatre branches et d'une branche master
 ___
-
 - 1_findNextPalindrome_test
 - 2_PopDash_test
 - 3_Anagrams_test
@@ -21,7 +18,6 @@ La branche master regroupe tous les tests.
 [![📟](images/install.png)](./../../)
 
 ## Install
-
 ___
 
 ```bash
@@ -33,7 +29,6 @@ composer dump-autoload
 [![📟](images/usage.png)](./../../)
 
 ## Usage
-
 ___
 
 ### Lancer les tests
