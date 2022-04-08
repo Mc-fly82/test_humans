@@ -9,6 +9,10 @@ ___
 
 La branche master regroupe tous les tests.
 
+## Hors test fait le 8-04-2022
+
+Pour aller plus loin j'ai ajouté la class PalindromeAdvance pour apporter une optimisation et alternative a la class Palindrome (logic de résolution trop compliquée).
+
 ## Dependencies
 
 > PHP 8
