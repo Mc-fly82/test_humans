@@ -14,25 +14,6 @@ trait PalindromeTester
 {
 	protected PalindromeContract $polindrome;
 
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 *
-	 */
-	public function is_even_return_true_when_passed_22()
-	{
-		$this->assertEquals(true, $this->polindrome->utils->isIntEven(22));
-	}
-
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 */
-	public function is_even_return_false_when_passed_21()
-	{
-
-		$this->assertEquals(false, $this->polindrome->utils->isIntEven(21));
-	}
 
 
 	/**
