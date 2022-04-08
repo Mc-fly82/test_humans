@@ -4,6 +4,7 @@ namespace App;
 
 use App\Contracts\PalindromeContract;
 use Exception;
+use JetBrains\PhpStorm\Pure;
 use function array_reverse;
 use function count;
 use function is_null;
@@ -20,11 +21,11 @@ use function is_null;
  *      getPalindrome(1029) => 1001
  *
  */
-class Palindrome implements PalindromeContract
+class Palindrome extends PalindromeContract
 {
 	public Utils $utils;
 
-	public function __construct()
+	#[Pure] public function __construct()
 	{
 		$this->utils = new Utils();
 	}
@@ -137,56 +138,6 @@ class Palindrome implements PalindromeContract
 			"firstHalf"  => $firstHalf,
 			"secondHalf" => $secondHalf,
 		];
-	}
-
-	/**
-	 * @param int $num
-	 *
-	 * @return int
-	 * @throws Exception
-	 * trouve le plus proche Palindrome avec une préférence pour le Palindrome supérieur à la valeur de départ si les deux deltas (sup et inf) sont égaux
-	 *
-	 */
-	public function findNearestPalindrome(int $num): int
-	{
-		$findUpperBound = null;
-		$findLowerBound = null;
-		$upCount        = $num;
-		$downCount      = $num;
-
-		while (is_null($findLowerBound) || is_null($findUpperBound)) {
-
-			// handle up tick
-			if (is_null($findUpperBound)) {
-				$upCount++;
-			}
-
-			// handle down tick
-			if (is_null($findLowerBound) && ! $downCount <= 0) {
-				$downCount--;
-			}
-
-			//handle set upper bound
-			if ($this->isPalUtil($upCount)) {
-				$findUpperBound = $upCount;
-			}
-
-			//handle set lower bound
-			if ($this->isPalUtil($downCount)) {
-				$findLowerBound = $downCount;
-			}
-		}
-
-		//after loop
-		$lowDelta  = $num - $findLowerBound;
-		$highDelta = $findUpperBound - $num;
-
-		// determine the lowest delta
-		if ($highDelta > $lowDelta) {
-			return $findLowerBound;
-		}
-
-		return $findUpperBound;
 	}
 
 }
