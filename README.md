@@ -2,7 +2,7 @@
 
 ___
 
-## Ce test se compose de quatre branche et d'une branche master
+## Ce test se compose de quatre branches et d'une branche master
 ___
 
 - 1_findNextPalindrome_test
