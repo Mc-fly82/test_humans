@@ -18,12 +18,32 @@ namespace App;
 namespace App;
 
 use App\Contracts\PalindromeContract;
+use Exception;
 
-class PalindromeAdvance extends Palindrome implements PalindromeContract
+class PalindromeAdvance implements PalindromeContract
 {
-	function isPalUtil(int $num): bool
+
+	public Utils $utils;
+
+	public function __construct()
 	{
+		$this->utils = new Utils();
+	}
+
+	public function findNearestPalindrome(int $num): int
+	{
+
 
 	}
 
+	/**
+	 * @param $num
+	 *
+	 * @return bool
+	 * @throws Exception
+	 */
+	function isPal($num): bool
+	{
+
+	}
 }
