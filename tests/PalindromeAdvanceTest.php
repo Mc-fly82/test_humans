@@ -1,6 +1,5 @@
 <?php
 
-use App\Palindrome;
 use App\PalindromeAdvance;
 use App\Test\PalindromeTester;
 use PHPUnit\Framework\TestCase;
