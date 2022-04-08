@@ -2,6 +2,7 @@
 
 namespace App\Test;
 
+use App\Contracts\PalindromeContract;
 use App\Palindrome;
 use Exception;
 
@@ -11,7 +12,7 @@ use Exception;
  */
 trait PalindromeTester
 {
-	protected Palindrome $polindrome;
+	protected PalindromeContract $polindrome;
 
 	/**
 	 * @test
@@ -33,65 +34,6 @@ trait PalindromeTester
 		$this->assertEquals(false, $this->polindrome->utils->isIntEven(21));
 	}
 
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 */
-	public function numLengthIsEven_return_false_when_passed_100()
-	{
-		$this->assertFalse($this->polindrome->numLengthIsEven(100));
-	}
-
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 */
-	public function numLengthIsEven_return_true_when_passed_10()
-	{
-		$this->assertTrue($this->polindrome->numLengthIsEven(10));
-
-	}
-
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 */
-	public function getNumberMedianDigitIndex_returns_1_when_given_100()
-	{
-		$this->assertEquals(1, $this->polindrome->getNumberMedianDigitIndex(100));
-	}
-
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 */
-	public function getNumberMedianDigitIndex_returns_minus_1_when_geven_10()
-	{
-		$this->assertEquals(-1, $this->polindrome->getNumberMedianDigitIndex(10));
-	}
-
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 * @throws Exception
-	 */
-	public function isPalUtil_check_if_a_even_length_number_is_a_palindrome()
-	{
-		$this->assertTrue($this->polindrome->isPalUtil(1001));
-		$this->assertTrue($this->polindrome->isPalUtil(1221));
-
-	}
-
-	/**
-	 * @test
-	 * @group PalindromeTest
-	 * @throws Exception
-	 */
-	public function isPalUtil_check_if_a_odd_length_number_is_a_palindrome()
-	{
-		$this->assertTrue($this->polindrome->isPalUtil(111));
-		$this->assertTrue($this->polindrome->isPalUtil(22622));
-	}
 
 	/**
 	 * @test
