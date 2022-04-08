@@ -34,7 +34,7 @@ class Anagram
 	 *
 	 * @return array
 	 */
-	public function findInDb(string $value): array
+	public function getAnagrams(string $value): array
 	{
 		$output_array = [];
 

@@ -68,7 +68,7 @@ class AnagramTest extends TestCase
 			'ddbb',
 			'bbdd',
 		];
-		$this->assertArraySimilar($outputDb1, (new Anagram($this->db1))->findInDb("dbbd"));
+		$this->assertArraySimilar($outputDb1, (new Anagram($this->db1))->getAnagrams("dbbd"));
 	}
 
 	/**
@@ -81,7 +81,7 @@ class AnagramTest extends TestCase
 			'uaceu',
 			'caueu',
 		];
-		$assert    = (new Anagram($this->db2))->findInDb("uaceu");
+		$assert    = (new Anagram($this->db2))->getAnagrams("uaceu");
 
 		$this->assertArraySimilar($outputDb2, $assert);
 	}
