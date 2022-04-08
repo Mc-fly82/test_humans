@@ -25,7 +25,9 @@ abstract class PalindromeContract
 	 * @return bool
 	 * @throws Exception
 	 */
-	function isPal($num): bool;
+	abstract public function isPal($num): bool;
+
+	abstract public function isPalUtil($num);
 
 	public function findNearestPalindrome(int $num): int
 	{
