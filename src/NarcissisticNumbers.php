@@ -2,6 +2,10 @@
 
 namespace App;
 
+use function array_push;
+use function array_reduce;
+use function count;
+
 /**
  * Class NarcissisticNumbers
  *
@@ -23,8 +27,21 @@ class NarcissisticNumbers
 	 */
 	public function isNarcissistic(int $value): bool
 	{
-		// 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
 
-		return true;
+		$arrayNum    = $this->utils->numToArray($value);
+		$arrayLength = count($arrayNum);
+		$store       = [];
+
+		foreach ($arrayNum as $item) {
+			array_push($store, pow($item, $arrayLength));
+		}
+
+		$callback = function ($a, $b) {
+			return $a + $b;
+		};
+
+		$result = array_reduce($store, $callback);
+
+		return $result === $value;
 	}
 }
