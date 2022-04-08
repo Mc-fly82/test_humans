@@ -44,7 +44,7 @@ class Anagram
 			}
 		}
 
-		return [];
+		return $output_array;
 	}
 
 	/**
