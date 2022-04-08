@@ -25,7 +25,7 @@ class Utils
 	}
 
 	/**
-	 * @param int $value
+	 * @param string $value
 	 *
 	 * @return array
 	 */
