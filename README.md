@@ -13,6 +13,10 @@ La branche master regroupe tous les tests.
 
 Pour aller plus loin j'ai ajouté la class PalindromeAdvance pour apporter une optimisation et alternative a la class Palindrome (logic de résolution trop compliquée).
 
+- 5_Polindrome_Advance_test
+
+branche non merger dans master
+
 ## Dependencies
 
 > PHP 8
