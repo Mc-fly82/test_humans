@@ -1,5 +1,5 @@
 # Test php Humans - Code Kata
-___
+
 ## Ce test se compose de quatre branches et d'une branche master
 ___
 - 1_findNextPalindrome_test
