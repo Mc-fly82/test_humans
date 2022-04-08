@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpMissingReturnTypeInspection */
 
 namespace App;
 
@@ -19,21 +19,19 @@ namespace App;
 
 use App\Contracts\PalindromeContract;
 use Exception;
+use JetBrains\PhpStorm\Pure;
+use function array_pop;
+use function array_shift;
+use function count;
 
-class PalindromeAdvance implements PalindromeContract
+class PalindromeAdvance extends PalindromeContract
 {
 
 	public Utils $utils;
 
-	public function __construct()
+	#[Pure] public function __construct()
 	{
 		$this->utils = new Utils();
-	}
-
-	public function findNearestPalindrome(int $num): int
-	{
-
-
 	}
 
 	/**
@@ -42,8 +40,37 @@ class PalindromeAdvance implements PalindromeContract
 	 * @return bool
 	 * @throws Exception
 	 */
-	function isPal($num): bool
+	public function isPal($num): bool
 	{
+		if ($num < 0) {
+			throw new Exception("Non valide");
+		}
+
+		return $this->isPalUtil($num);
 
 	}
+
+	/**
+	 * @param $num
+	 *
+	 * @throws Exception
+	 */
+	public function isPalUtil($num): bool
+	{
+		//serialize
+		$state = $this->utils->numToArray($num); //base case
+
+		while ( ! empty($state) && count($state) > 1) {
+			//iterator
+			$left  = array_pop($state);
+			$right = array_shift($state);
+
+			if ($left !== $right) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 }
