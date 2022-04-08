@@ -15,7 +15,7 @@ Pour aller plus loin j'ai ajouté la class PalindromeAdvance pour apporter une o
 
 - 5_Polindrome_Advance_test
 
-branche non merger dans master
+branche merger dans master
 
 ## Dependencies
 
