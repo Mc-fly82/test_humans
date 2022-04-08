@@ -21,6 +21,14 @@ class AnagramTest extends TestCase
 			'vdvd',
 		];
 
+		$this->db2 = [
+			'cuazeu',
+			'caueu',
+			'uacau',
+			'caeus',
+			'uaceu',
+		];
+
 	}
 
 	/**
